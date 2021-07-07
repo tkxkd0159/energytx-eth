@@ -1,0 +1,28 @@
+{
+  "name": "energytx-eth",
+  "version": "1.0.0",
+  "description": "KU energy trading platform implemented by Ethereum ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkxkd0159/energytx-eth.git"
+  },
+  "keywords": [],
+  "author": "LJS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkxkd0159/energytx-eth/issues"
+  },
+  "homepage": "https://github.com/tkxkd0159/energytx-eth#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "got": "^11.8.2",
+    "nodemon": "^2.0.9"
+  },
+  "type": "module"
+}
