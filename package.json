@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tkxkd0159/energytx-eth#readme",
   "dependencies": {
+    "@ethereumjs/tx": "^3.2.1",
     "express": "^4.17.1",
     "web3": "^1.4.0"
   },
