@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/tkxkd0159/energytx-eth#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "web3": "^1.4.0"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "got": "^11.8.2",
     "nodemon": "^2.0.9"
   },
