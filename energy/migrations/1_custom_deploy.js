@@ -1,5 +1,5 @@
-const Simple = artifacts.require("SimpleStorage");
+const EnergyToken = artifacts.require("EnergyToken");
 
 module.exports = function (deployer) {
-  deployer.deploy(Simple);
+  deployer.deploy(EnergyToken);
 };

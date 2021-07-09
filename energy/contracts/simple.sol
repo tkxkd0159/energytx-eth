@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.4.16 <0.9.0;
+pragma solidity >=0.7.0 <0.9.0;
 
 contract SimpleStorage {
     uint storedData;
@@ -13,7 +13,7 @@ contract SimpleStorage {
       _;
     }
 
-    function set(uint x) public {
+    function set(uint x) public restricted{
         storedData = x;
     }
 
