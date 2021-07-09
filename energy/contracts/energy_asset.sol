@@ -10,7 +10,7 @@ contract EnergyAsset is ERC1155, Ownable, ERC1155Burnable {
     uint256 public constant ENERGY_CERTIFICATION = 1;
 
 
-    constructor() ERC1155("https://tkxkd0159.github.io/ERC1155meta/token/{id}.json") {
+    constructor() ERC1155("https://tkxkd0159.github.io/energytx-eth/erc1155meta/token/{id}.json") {
         _mint(msg.sender, E_TOKEN, 10**18, "");
         _mint(msg.sender, ENERGY_CERTIFICATION, 1, "");
     }
