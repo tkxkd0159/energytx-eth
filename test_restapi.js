@@ -3,6 +3,8 @@ import { addTwo } from './rest_handle.mjs';
 
 const app = express()
 const port = 3000
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 app.use(express.json());
 
 
@@ -56,6 +58,17 @@ app.route('/book')
   .put(function (req, res) {
     res.send('Update the book')
   })
+
+app.get('/test', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+app.get('/ejs', (req, res) => {
+    res.render('test', {
+        custom_name: "My homepage",
+        length: 5
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
