@@ -9,6 +9,7 @@ contract EnergyAsset is Ownable, ERC1155Burnable {
     uint256 private _totalTokenSupply;
     uint256 public constant E_CERTIFICATION = 1;
     uint256 private _creation_time = block.timestamp;
+    uint256 private _maxid = 0;
 
     event AddProsumer(address indexed newProsumer);
 
@@ -61,6 +62,9 @@ contract EnergyAsset is Ownable, ERC1155Burnable {
         if (id == E_TOKEN) {
             _totalTokenSupply += amount;
         }
+        if (id > _maxid) {
+            _maxid = id;
+        }
 
     }
 
@@ -72,6 +76,10 @@ contract EnergyAsset is Ownable, ERC1155Burnable {
         for (uint i=0; i < ids.length; i++) {
             if (ids[i] == E_TOKEN) {
                 _totalTokenSupply += amounts[i];
+            }
+
+            if (ids[i] > _maxid) {
+                _maxid = ids[i];
             }
         }
     }
@@ -87,5 +95,9 @@ contract EnergyAsset is Ownable, ERC1155Burnable {
                 _totalTokenSupply -= amounts[i];
             }
         }
+    }
+
+    function getMaxId() public view returns (uint256) {
+        return _maxid;
     }
 }
