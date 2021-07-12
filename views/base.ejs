@@ -41,11 +41,13 @@
                     <div class="inner">
                     <% switch (type) {
                         case 'tx' : %>
-                    <%- include('tx'); %>
+                        <%- include('tx'); %>
                         <% break;
-
                         case 'register' : %>
                         <%- include('register'); %>
+                        <% break;
+                        case 'dpjson' : %>
+                        <%- include('dpjson', {myjson: myobj}); %>
                         <% break;
                     } %>
 
