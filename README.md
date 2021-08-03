@@ -1,6 +1,7 @@
-# energytx-eth
-
-## Setting
+![Arweave](https://img.shields.io/badge/Arweave-v2.4.2.0-green)
+![Solidity](https://img.shields.io/badge/Solidity-v0.8.6-blue)
+![node](https://img.shields.io/badge/Nodejs-v14.17.4-orange)
+# Setting
 ```
 npm i
 
