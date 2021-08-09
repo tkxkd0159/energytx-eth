@@ -1,12 +1,29 @@
 ![Arweave](https://img.shields.io/badge/Arweave-v2.4.2.0-green)
 ![Solidity](https://img.shields.io/badge/Solidity-v0.8.6-blue)
 ![node](https://img.shields.io/badge/Nodejs-v14.17.4-orange)
+![ros](https://img.shields.io/badge/ROS-Noetic-orange)
 # Setting
 ```
 npm i
 
 npm i -g truffle
 truffle init
+```
+
+## ROS for IMU(AMI)
+```bash
+# Execute IMU
+roslaunch mavros fcu_url:=/dev/ttyACM0:921600
+
+# Install geographiclib
+sudo /opt/ros/noetic/lib/mavros/install_geographiclib
+
+# Topic
+rostopic list
+rostopic echo <topic_name>
+rostopic info <topic_name>
+rostopic + (tab, tab)        # etc
+rosrun rqt_graph rqt_graph   # global view of topics
 ```
 
 ## Contract
