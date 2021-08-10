@@ -48,7 +48,6 @@ function initApiServer() {
           data["start_"], data["Period"],
           data["Power"], data['Price']);
           mintAsset(data["from_"], file_nums, 1, data["from_"], asset_contract);
-          // res.redirect('/register');
           res.render('base', {type: "dpjson", myobj: meta_obj});
         })();
       })

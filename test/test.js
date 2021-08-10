@@ -1,14 +1,15 @@
 import fs from 'fs';
 import Web3 from 'web3';
 
-import {main_addr,
+import {
     getUriMeta, getAssetContractOwner, getBalanceBatch, getEtokenTotalBalance,
     setURI, batchTransferFrom, mintAsset, mintBatchAsset, burnBatchAsset
-} from "./lib/energy.mjs";
+} from "../lib/energy.mjs";
 
 
 // setURI("https://tkxkd0159.github.io/ERC1155meta/token/{id}.json", main_addr);
 
+const main_addr = process.env.GAN_ADDR1;
 const sub_addr = process.env.GAN_ADDR2;
 const asset_addr = process.env.ASSET_ADDR;
 const trade_addr = process.env.TRADE_ADDR;
