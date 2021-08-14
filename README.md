@@ -1,6 +1,7 @@
-![Arweave](https://img.shields.io/badge/Arweave-v2.4.2.0-green)
 ![Solidity](https://img.shields.io/badge/Solidity-v0.8.6-blue)
-![node](https://img.shields.io/badge/Nodejs-v14.17.4-orange)
+![Typescript](https://img.shields.io/badge/TypeScript-v4.3.5-blue)
+![IPFS](https://img.shields.io/badge/IPFS-v0.16.2-orange)
+![node](https://img.shields.io/badge/Node.js-v14.17.4-orange)
 ![ros](https://img.shields.io/badge/ROS-Noetic-orange)
 
 # Setting
