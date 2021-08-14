@@ -8,3 +8,5 @@ console.log(add(2))
 console.log(add(2)(5))
 console.log(add2(1))
 console.log(add2(1)(2))
+
+console.log(process.env.GAN_ADDR1)
