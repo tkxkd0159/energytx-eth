@@ -1,69 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Energy Trading Platform</title>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-        />
-        <link rel="stylesheet" href="static/css/main.css" />
-        <link
-            rel="shrtcut icon"
-            type="image/x-icon"
-            href="static/favicon.ico"
-        />
-        <noscript
-        <link rel="stylesheet" href="static/css/noscript.css" />
-   </noscript>
+        <title>TypeScript Hello Web</title>
     </head>
-    <body class="is-preload">
-        <div id="wrapper">
-            <header id="header" class="alt">
-                <a href="/" class="logo"><strong>Blockchain-based</strong><span>Energy Trading Platform</span></a>
-                <nav>
-
-                    <a href="#menu">Menu</a>
-                </nav>
-            </header>
-
-            <nav id="menu">
-                <ul class="links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="/">Cusotom3</a></li>
-                    <li><a href="/">Custom4</a></li>
-                </ul>
-            </nav>
-
-            <div id="main" class="alt">
-                <section id="one">
-                    <div class="inner">
-                    <% switch (type) {
-                        case 'tx' : %>
-                        <%- include('tx'); %>
-                        <% break;
-                        case 'register' : %>
-                        <%- include('register'); %>
-                        <% break;
-                        case 'dpjson' : %>
-                        <%- include('dpjson', {myjson: myobj}); %>
-                        <% break;
-                    } %>
-
-
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <!-- Scripts -->
-        <script src="static/js/jquery.min.js"></script>
-        <script src="static/js/jquery.scrolly.min.js"></script>
-        <script src="static/js/jquery.scrollex.min.js"></script>
-        <script src="static/js/browser.min.js"></script>
-        <script src="static/js/breakpoints.min.js"></script>
+    <body>
+        <label for="eth_addr">ETH Address : </label>
+        <input type="text" id="addr1" name="eth_addr">
+        <br>
+        <button id="button1" type="button">Get block number</button>
+        <button id="button2" type="button">Send TX</button>
+        <script src="static/js/ethers-5.2.esm.min.js" type="application/javascript"></script>
         <script src="static/js/main.js"></script>
-        <script src="static/js/util.js"></script>
+        <script src="static/js/metamask.js"></script>
     </body>
 </html>

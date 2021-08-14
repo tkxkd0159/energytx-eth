@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TypeScript Hello Web</title>
+    </head>
+    <body>
+        <label for="eth_addr">ETH Address : </label>
+        <input type="text" id="addr1" name="eth_addr">
+        <br>
+        <button id="button1" type="button">Get block number</button>
+        <button id="button2" type="button">Send TX</button>
+
+
+        <script type="module" src="http://127.0.0.1:3000/static/ethers-5.2.esm.min.js"></script>
+        <script type="module" src="http://127.0.0.1:3000/static/detect-provider.min.js"></script>
+        <script type="module" src="./js/test.mjs"></script>
+        <script type="module" src="./js/metamask.mjs"></script>
+        <script type="module" src="./js/ethers.mjs"></script>
+    </body>
+</html>

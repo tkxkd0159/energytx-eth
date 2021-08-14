@@ -1,19 +1,17 @@
 {
     "display": "Node 14",
     "compilerOptions": {
-        "module": "commonjs",
-        "lib": ["es2020"],
-        "target": "es2020",
-        "moduleResolution": "node",
-        "outDir": "build",
-
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-
         "downlevelIteration": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["es2020"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "dist",
         "removeComments": true,
         "sourceMap": false,
+        "strict": true,
+        "skipLibCheck": true,
+        "target": "es2020"
     }
 }
