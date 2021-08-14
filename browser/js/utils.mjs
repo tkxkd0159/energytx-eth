@@ -1,8 +1,9 @@
 function removeElementsByClass(class_name){
-    const elements = document.getElementsByClassName(class_name);
-    while(elements.length > 0){
-        elements[0].parentNode.removeChild(elements[0]);
+    const e = document.querySelectorAll(class_name);
+    for (let i of e) {
+        console.log(i.innerText)
     }
+    e.forEach(e => e.parentNode.removeChild(e))
 }
 
 export { removeElementsByClass }
