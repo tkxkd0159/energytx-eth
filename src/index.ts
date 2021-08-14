@@ -6,11 +6,10 @@ import express from 'express';
 import cors from 'cors';
 
 import { getBalance } from './modules/ethers'
-import { wrapper } from './modules/utils'
 
 const app = express();
 app.use(cors())
-const port = 3000
+const port = 8080
 
 app.use('/static', express.static(path.join(__dirname, '..', 'lib')));
 app.set('view engine', 'ejs');
@@ -24,10 +23,10 @@ app.get('/', (req, res) => {
 
 // })
 
-app.get('/balance', wrapper(async (req, res) => {
+app.get('/balance', async (req, res) => {
     let b = await getBalance()
     res.send(b)
-})
+}
 )
 
 

@@ -4,16 +4,17 @@
         <title>TypeScript Hello Web</title>
     </head>
     <body>
-        <label for="eth_addr">ETH Address : </label>
+        <label for="eth_addr">Address : </label>
         <input type="text" id="addr1" name="eth_addr">
+        <label for="eth_value">ETH : </label>
+        <input type="text" id="eth-value" name="eth_value">
         <br>
-        <button id="button1" type="button">Get block number</button>
+        <button id="button1" type="button">Get state</button>
         <button id="button2" type="button">Send TX</button>
+        <button class="enableEthereumButton">Enable Ethereum</button>
 
-
-        <script type="module" src="http://127.0.0.1:3000/static/ethers-5.2.esm.min.js"></script>
-        <script type="module" src="http://127.0.0.1:3000/static/detect-provider.min.js"></script>
-        <script type="module" src="./js/test.mjs"></script>
+        <script type="module" src="http://127.0.0.1:8080/static/ethers-5.2.esm.min.js"></script>
+        <script type="module" src="http://127.0.0.1:8080/static/detect-provider.min.js"></script>
         <script type="module" src="./js/metamask.mjs"></script>
         <script type="module" src="./js/ethers.mjs"></script>
     </body>
