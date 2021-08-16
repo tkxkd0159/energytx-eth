@@ -1,17 +1,35 @@
 import { BigNumber, ethers } from "ethers";
+import fs from "fs"
 
-// const provider = new ethers.providers.JsonRpcProvider("https://goerli.infura.io/v3/d1d5cddfa64244f68b1c0359d22a5491")
-const INFURA_ID = "d1d5cddfa64244f68b1c0359d22a5491"
-const provider = ethers.getDefaultProvider("goerli", {infura: INFURA_ID})
+const provider = ethers.getDefaultProvider("goerli", {infura: process.env.INFURA_KEY})
+
 async function getBalance(addr: string){
     try {
-        let res: BigNumber = await provider.getBalance(addr);
+        let a: string = addr.replace('0x', '');
+        if (a.length !== 40) {
+            throw "It must be 20 bytes except prefix"
+        }
+
+        let res: BigNumber = await provider.getBalance(a);
         const balance: number|string = parseInt(res._hex)
         return balance.toString()
-    } catch {
-        console.error("Your address is wrong")
+    } catch (e) {
+        return `Your address is wrong ${e}`
     }
 
 }
 
-export {getBalance}
+function makeContract(contract_addr: string, abi_path: string): ethers.Contract {
+    let abi = JSON.parse(fs.readFileSync(abi_path).toString()).abi;
+    let c = new ethers.Contract(contract_addr, abi, provider)
+    return c
+}
+
+function makeSigner(pvt_key: string): ethers.Wallet {
+    let s = new ethers.Wallet(pvt_key)
+    s = s.connect(provider)
+    return s
+}
+
+export {getBalance,
+        provider, makeSigner, makeContract}

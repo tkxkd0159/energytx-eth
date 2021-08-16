@@ -6,7 +6,8 @@
   "scripts": {
     "test": "ts-node --require dotenv/config src/test.ts",
     "start": "ts-node --require dotenv/config src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "node": "node -r dotenv/config dist/index.js"
   },
   "keywords": [],
   "author": "",

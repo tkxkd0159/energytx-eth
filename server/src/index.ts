@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.get('/balance', async (req, res) => {
     const addr = req.query.addr as string
-    let b = await getBalance(addr)
+    let b: string = await getBalance(addr)
     res.send(b)
 }
 )
