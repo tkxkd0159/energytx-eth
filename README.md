@@ -6,13 +6,6 @@
 
 # Setting
 
-```
-npm i
-
-npm i -g truffle
-truffle init
-```
-
 ## ROS for IMU(AMI)
 
 ```bash
