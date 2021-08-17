@@ -14,5 +14,8 @@ function hexToNum(x) {
     return parseInt(x, 16)
 }
 
+const CDN_PORT = 7777
+
 export { removeElementsByClass, makeDisplayElement,
-        hexToNum }
+        hexToNum,
+        CDN_PORT }

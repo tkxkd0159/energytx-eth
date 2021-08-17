@@ -1,4 +1,5 @@
-import { removeElementsByClass, makeDisplayElement } from './utils.mjs'
+import { removeElementsByClass, makeDisplayElement, CDN_PORT } from './utils.mjs'
+
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 let signer;
 (async () => {
@@ -20,7 +21,7 @@ async function getBalance(){
         return
     }
 
-    const res = await fetch(`http://127.0.0.1:8080/balance?addr=${target_address}`, {method: "GET"});
+    const res = await fetch(`http://127.0.0.1:${CDN_PORT}/balance?addr=${target_address}`, {method: "GET"});
     const data = await res.text();
     if (data.startsWith('Your')) {
         makeDisplayElement(data)
