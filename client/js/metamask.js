@@ -22,7 +22,15 @@ async function checkMetamask() {
             return true;
         }
         catch (e) {
-            console.error(e)
+            if (e.code === -32002) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'warning',
+                    html: '<em>wallet_requestPermissions</em> is pending. Please check your metamask extension',
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+            }
             return false;
         }
     }
@@ -59,6 +67,8 @@ ethereum.on('accountsChanged', (accounts) => {
         icon: 'success',
         confirmButtonText: 'OK'
       })
+    window.location.reload();
+
 })
 
 export { ethers, provider, signer, ERROR_CHK, accounts }

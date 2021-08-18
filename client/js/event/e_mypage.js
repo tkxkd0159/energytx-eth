@@ -1,12 +1,12 @@
 /* global ethereum */
 import Swal from 'sweetalert2'
-import { removeElementsByClass, makeDisplayElement } from '../utils.js'
+import { removeElementsBySelector, makeDisplayElement } from '../utils.js'
 import { ethers, provider, signer, accounts, ERROR_CHK } from '../metamask.js'
 
 
 const btn = document.querySelector('#b_get_b');
 btn.addEventListener('click', async function() {
-    removeElementsByClass('.display')
+    removeElementsBySelector('.display')
     let d = document.querySelector('.display-home-value')
     let res = await provider.getBalance(accounts[0]);
     let balance = ethers.utils.formatEther(res)

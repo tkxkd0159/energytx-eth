@@ -1,4 +1,4 @@
-function removeElementsByClass(class_name){
+function removeElementsBySelector(class_name){
     const e = document.querySelectorAll(class_name);
     e.forEach(e => e.parentNode.removeChild(e))
 }
@@ -16,5 +16,5 @@ function hexToNum(x) {
 
 
 
-export { removeElementsByClass, makeDisplayElement,
+export { removeElementsBySelector, makeDisplayElement,
         hexToNum }
