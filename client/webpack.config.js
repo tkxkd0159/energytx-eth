@@ -3,7 +3,7 @@ const __dirname = path.resolve();
 
 export default {
   entry: {
-    basic: ['@babel/polyfill', './js/bootstrap.js', './js/utils.js', './js/metamask.js'],
+    basic: ['./js/bootstrap.js', './js/utils.js', './js/metamask.js'],
     about: './js/event/e_about.js',
     index: './js/event/e_index.js',
     mypage: './js/event/e_mypage.js',
@@ -26,7 +26,9 @@ export default {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            plugins: ["@babel/plugin-transform-runtime"]
+
           }
         }
       }
