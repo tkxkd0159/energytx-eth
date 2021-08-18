@@ -14,7 +14,7 @@ btn.addEventListener('click', function() {
     getBalance()
 })
 
-async function getBalance(){
+async function getBalance() {
     let d = document.querySelector('.display-home-value')
     const target_address = document.querySelector('#from_addr').value
 
@@ -23,14 +23,17 @@ async function getBalance(){
         return
     }
 
-    const res = await fetch(`http://127.0.0.1:${CDN_PORT}/balance?addr=${target_address}`, {method: "GET"});
-    const data = await res.text();
+    try {
+        let a = target_address.replace('0x', '');
+        if (a.length !== 40) {
+            throw "It must be 20 bytes except prefix"
+        }
 
-    if (data.startsWith('Your')) {
-        makeDisplayElement(data, d)
-    }
-    else {
-        makeDisplayElement(`Balance is ${data}`, d)
+        let res = await provider.getBalance(a);
+        let balance = parseInt(res._hex).toString()
+        makeDisplayElement(`Balance is ${balance}`, d)
+    } catch (e) {
+        makeDisplayElement(`Your address is wrong \n ${e}`, d)
     }
 }
 
