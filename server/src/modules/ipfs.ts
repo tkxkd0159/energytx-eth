@@ -12,11 +12,16 @@ const ipfs = axios.create({
 
 })
 
-async function addFileToIPFS(file_path: string) {
+async function addFileToIPFS(file_path: string, file_name?: string) {
     let data = await readFile(file_path)
     let form = new FormData();
-    form.append("file", data)
-    let res = await ipfs.post('add', form, {headers: {...form.getHeaders()}})
+    if (file_name) {
+        form.append("file", data, file_name)
+    }
+    else {
+        form.append("file", data)
+    }
+    let res = await ipfs.post('add', form, {headers: {...form.getHeaders()}, params: {"wrap-with-directory": true}})
     console.log(res.data)
 
 }
@@ -27,22 +32,6 @@ async function readFileFromIPFS(ipfs_path: string) {
 }
 
 export { addFileToIPFS, readFileFromIPFS }
-
-// readFile('test.json').then(data=>{
-//     let form = new FormData();
-//     form.append("file", data)
-//     return form
-// }).then(
-//     form => {
-//         ipfs.post('add', form, {
-//             headers: {
-//                 ...form.getHeaders()
-//             }
-//         }).then((res) => {
-//             console.log(res.data)
-//         })
-//     }
-// )
 
 
 

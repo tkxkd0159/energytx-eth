@@ -8,7 +8,7 @@ import { getBalance } from './modules/ethers'
 
 const app = express();
 app.use(cors())
-const port = 8080
+const port = 7777
 
 app.use('/static', express.static(path.join(__dirname, '..', 'lib')));
 app.set('view engine', 'ejs');
