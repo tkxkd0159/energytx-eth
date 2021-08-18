@@ -16,5 +16,5 @@
         "removeComments": true,
         "sourceMap": false
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*", "test/test.ts", "test/ethers.ts"]
 }

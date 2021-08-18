@@ -1,10 +1,9 @@
-
 import path from 'path';
 
 import express from 'express';
 import cors from 'cors';
 
-import { getBalance } from './modules/ethers'
+import { getBalance } from '../test/ethers'
 
 const app = express();
 app.use(cors())
@@ -18,9 +17,6 @@ app.set('views', path.join(__dirname, '..', 'views'))
 app.get('/', (req, res) => {
     res.render('base')
 });
-// app.post('/blockNum', (req, res) => {
-
-// })
 
 app.get('/balance', async (req, res) => {
     const addr = req.query.addr as string

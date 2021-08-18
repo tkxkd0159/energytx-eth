@@ -32,6 +32,3 @@ async function readFileFromIPFS(ipfs_path: string) {
 }
 
 export { addFileToIPFS, readFileFromIPFS }
-
-
-

@@ -16,7 +16,6 @@ async function getBalance(addr: string){
     } catch (e) {
         return `Your address is wrong ${e}`
     }
-
 }
 
 function makeContract(contract_addr: string, abi_path: string): ethers.Contract {
