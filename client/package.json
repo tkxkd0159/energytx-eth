@@ -1,0 +1,32 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack -w --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@metamask/detect-provider": "^1.2.0",
+    "@popperjs/core": "^2.9.3",
+    "bootstrap": "^5.1.0",
+    "ethers": "^5.4.4",
+    "sweetalert2": "^11.1.2"
+  },
+  "type": "module"
+}

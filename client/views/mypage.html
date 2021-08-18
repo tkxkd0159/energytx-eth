@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <link href="../css/header.css" rel="stylesheet">
-        <link href="../css/main.css" rel="stylesheet">
+        <link href="../dist/css/header.css" rel="stylesheet">
+        <link href="../dist/css/main.css" rel="stylesheet">
 
         <title>My page • Ethereum-based Energy Trading Platform</title>
     </head>
@@ -31,31 +31,30 @@
                 </div>
             </header>
 
-            <div class="b-divider"></div>
-<div class="container">
-    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
-        Tooltip on right
-      </button>
 
-<div class="b-divider"></div>
+            <div class="b-divider4"></div>
 
             <div class="container">
                 <div>
                     <p>
                         <label for="eth_addr">Address : </label>
-                        <input type="text" id="from_addr" name="eth_addr" />
+                        <input type="text" id="to_addr" name="eth_addr" />
                     </p>
                     <p>
                         <label for="eth_value">ETH : </label>
                         <input type="text" id="eth-value" name="eth_value" />
                     </p>
                 </div>
+
+                <div class="b-divider"></div>
+
                 <div>
-                    <button id="b_get_b" type="button">Get balance</button>
-                    <button id="b_send_t" type="button">Send TX</button>
-                    <button class="b_enable_eth">Enable Ethereum</button>
+                    <button type="button" class="btn btn-outline-light" id="b_get_b" data-bs-toggle="tooltip" data-bs-placement="top" title="Get balance of current account">Get balance</button>
+                    <button type="button" class="btn btn-outline-light" id="b_send_t" data-bs-toggle="tooltip" data-bs-placement="top" title="Send ETH to others">Send</button>
                 </div>
-              </div>
+                <div class="b-divider"></div>
+                <div class="display-home-value"></div>
+            </div>
     </main>
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
@@ -69,19 +68,7 @@
         </symbol>
       </svg>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-        <script
-            src="../js/lib/detect-provider.min.js"
-        ></script>
-        <script
-            src="../js/lib/ethers-5.2.esm.min.js"
-        ></script>
-        <script
-        src="../js/lib/sweetalert2.all.min.js"
-    ></script>
-        <script src="../js/init.js"></script>
-        <script type="module" src="../js/utils.mjs"></script>
-        <script type="module" src="../js/metamask.mjs"></script>
-        <script type="module" src="../js/ethers.mjs"></script>
+      <script src="../dist/js/basic.bundle.js"></script>
+      <script src="../dist/js/mypage.bundle.js"></script>
     </body>
 </html>

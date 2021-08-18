@@ -11,11 +11,10 @@ function makeDisplayElement(content, selector) {
 }
 
 function hexToNum(x) {
-    return parseInt(x, 16)
+    return parseInt(x, 16);
 }
 
-const CDN_PORT = 7777
+
 
 export { removeElementsByClass, makeDisplayElement,
-        hexToNum,
-        CDN_PORT }
+        hexToNum }

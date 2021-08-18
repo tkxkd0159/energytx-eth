@@ -1,0 +1,1 @@
+/* global ethereum ethers accounts provider signer */
