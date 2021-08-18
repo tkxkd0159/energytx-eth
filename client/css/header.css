@@ -1,9 +1,16 @@
 .b-divider {
-    height: 2rem;
+    height: 1rem;
     background-color: rgba(0, 0, 0, 0);
     border: solid rgba(0, 0, 0, 0);
     border-width: 1px 0;
   }
+.b-divider4 {
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid rgba(0, 0, 0, 0);
+    border-width: 1px 0;
+  }
+
 
   .form-control-dark {
     color: #fff;

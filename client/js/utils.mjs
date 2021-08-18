@@ -3,11 +3,11 @@ function removeElementsByClass(class_name){
     e.forEach(e => e.parentNode.removeChild(e))
 }
 
-function makeDisplayElement(content) {
+function makeDisplayElement(content, selector) {
     let p = document.createElement('p');
     p.setAttribute("class", "display")
     p.innerText = content;
-    document.body.appendChild(p);
+    selector.appendChild(p);
 }
 
 function hexToNum(x) {

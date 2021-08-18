@@ -18,7 +18,7 @@ async function checkMetamask() {
 })();
 
 
-const eth_btn = document.querySelector('.b_enable_eth');
+const eth_btn = document.querySelector('#b_enable_eth');
 eth_btn.addEventListener('click', async () => {
     removeElementsByClass('.display')
     let accounts = await ethereum.request({ method: "eth_requestAccounts" });
@@ -26,10 +26,10 @@ eth_btn.addEventListener('click', async () => {
     // let block_number = await ethereum.request({ "method":"eth_getBalance","params":["0xCFe590435A372E4eBa869a53B82C8C64352F21FD", "latest"]})
     let block_number = await ethereum.request({ method: "eth_blockNumber", params: []})
 
-
-    makeDisplayElement(`Currnet account is ${accounts[0]}`)
-    makeDisplayElement(`chain ID is ${chain_id}`)
-    makeDisplayElement(`Current block number is ${hexToNum(block_number)}`)
+    let d = document.querySelector('.display-home-value')
+    makeDisplayElement(`Currnet account is ${accounts[0]}`, d)
+    makeDisplayElement(`chain ID is ${chain_id}`, d)
+    makeDisplayElement(`Current block number is ${hexToNum(block_number)}`, d)
 });
 
 

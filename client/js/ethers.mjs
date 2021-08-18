@@ -15,19 +15,22 @@ btn.addEventListener('click', function() {
 })
 
 async function getBalance(){
+    let d = document.querySelector('.display-home-value')
     const target_address = document.querySelector('#from_addr').value
+
     if (target_address === "") {
-        makeDisplayElement("Please enter the target address")
+        makeDisplayElement("Please enter the target address", d)
         return
     }
 
     const res = await fetch(`http://127.0.0.1:${CDN_PORT}/balance?addr=${target_address}`, {method: "GET"});
     const data = await res.text();
+
     if (data.startsWith('Your')) {
-        makeDisplayElement(data)
+        makeDisplayElement(data, d)
     }
     else {
-        makeDisplayElement(`Balance is ${data}`)
+        makeDisplayElement(`Balance is ${data}`, d)
     }
 }
 
