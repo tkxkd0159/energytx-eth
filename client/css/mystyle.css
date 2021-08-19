@@ -3,6 +3,21 @@ body {
   background-color: #2d3436;
   }
 
+#loading-back{
+  position: absolute;
+  z-index: 100;
+  background-color: #191f26;
+  display:block;
+  left:0;
+  top:0;
+  }
+#loading-bar{
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  z-index:200;
+}
+
 /* <---- nav ----> */
 .b-divider {
     height: 1rem;

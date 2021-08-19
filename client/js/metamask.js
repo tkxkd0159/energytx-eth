@@ -3,13 +3,19 @@
 import detectEthereumProvider from '@metamask/detect-provider';
 import { ethers } from "ethers";
 import Swal from 'sweetalert2'
+import "animate.css"
 
 import { removeElementsBySelector } from './utils.js'
+import { abi_core } from "./abi.js"
 
-let provider;
-let signer;
+
+let provider;  // Web3Provider
+let signer;    // JsonRpcSigner
 let accounts;
+let ec_with_singer;
 const ERROR_CHK = ethers.utils.Logger.errors;
+const energy_contract_address = "0x7709f0faA745d0D37B31996E1E6dbC4Fd3B0EC67";
+
 
 async function checkMetamask() {
     const provider = await detectEthereumProvider();
@@ -42,12 +48,13 @@ async function checkMetamask() {
     }
 }
 
-// https://infura.io/docs/ethereum/json-rpc
 (async function() {
     if (await checkMetamask()) {
         provider = new ethers.providers.Web3Provider(window.ethereum);
-        await provider.send("eth_requestAccounts", []);  // metamask API
+        await provider.send("eth_requestAccounts", []);  // sending raw messages to Metamask, ref. https://infura.io/docs/ethereum/json-rpc
         signer = provider.getSigner();
+        let energy_contract = new ethers.Contract(energy_contract_address, abi_core, provider);
+        ec_with_singer = energy_contract.connect(signer);
     }
 })();
 
@@ -130,4 +137,5 @@ permission_btn.addEventListener('click', async () => {
     }
 );
 
-export { ethers, provider, signer, ERROR_CHK, accounts }
+
+export { accounts, ethers, provider, signer, ERROR_CHK, ec_with_singer }

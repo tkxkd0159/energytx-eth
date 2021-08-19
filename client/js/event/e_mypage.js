@@ -1,5 +1,7 @@
 /* global ethereum */
 import Swal from 'sweetalert2'
+import "animate.css"
+
 import { removeElementsBySelector, makeDisplayElement } from '../utils.js'
 import { ethers, provider, signer, accounts, ERROR_CHK } from '../metamask.js'
 
@@ -13,7 +15,13 @@ btn.addEventListener('click', async function() {
     Swal.fire({
         icon: 'info',
         title: 'Your Balance',
-        html: `Current account : <b>${accounts[0]}</b>` + `<br><br> <b>${balance}</b> ETH`
+        html: `Current account : <b>${accounts[0]}</b>` + `<br><br> <b>${balance}</b> ETH`,
+        showClass: {
+            popup: 'animate__animated animate__bounceInDown'
+          },
+        hideClass: {
+            popup: 'animate__animated animate__bounceOutUp'
+          }
       })
 
 })
