@@ -4,6 +4,8 @@ import detectEthereumProvider from '@metamask/detect-provider';
 import { ethers } from "ethers";
 import Swal from 'sweetalert2'
 
+import { removeElementsBySelector } from './utils.js'
+
 let provider;
 let signer;
 let accounts;
@@ -70,5 +72,62 @@ ethereum.on('accountsChanged', async (accounts) => {
     window.location.reload();
 
 })
+
+const permission_btn = document.querySelector('#b_permission');
+permission_btn.addEventListener('click', async () => {
+    removeElementsBySelector('.display')
+    try {
+        let permissions = await ethereum.request({ method: "wallet_requestPermissions", params: [{ eth_accounts: {} }] });
+        console.log(permissions[0]["caveats"][1]["value"])
+        if (permissions.find((p) => p.parentCapability === 'eth_accounts')) {
+            let account_ls = permissions[0]["caveats"][1]["value"]
+            let res = ""
+            account_ls.forEach((p) => {
+                res += p
+                res += "\n"
+            })
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                html: '<h4>Connect to Metamask successfully!</h4><br>' +
+                      `Got permissions for <b>${res}<b>`,
+                showConfirmButton: true,
+                timer: 3000
+              })
+        }
+
+    }
+    catch(e) {
+        if (e.code === -32002) {
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                html: '<em>wallet_requestPermissions</em> is pending. Please check your metamask extension',
+                showConfirmButton: true,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                  },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                  }
+              })
+        }
+        else if (e.code == 4001) {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                html: `<b>${e.message}</b>`,
+                showConfirmButton: true,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                  },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                  }
+              })
+        }
+        }
+    }
+);
 
 export { ethers, provider, signer, ERROR_CHK, accounts }
