@@ -1,6 +1,4 @@
 /* global ethereum */
-import Swal from 'sweetalert2'
-import "animate.css"
 import { removeElementsBySelector, makeDisplayElement, hexToNum } from '../utils.js'
 import { ethers, accounts } from '../metamask.js'
 

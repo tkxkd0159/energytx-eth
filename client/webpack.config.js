@@ -5,7 +5,6 @@ export default {
   entry: {
     basic: ['./js/bootstrap.js', './js/utils.js'],
     eth: ['./js/metamask.js', './js/abi.js','./js/eth_interact.js'],
-    about: './js/event/e_about.js',
     index: './js/event/e_index.js',
     mypage: './js/event/e_mypage.js',
     register: './js/event/e_register.js',
