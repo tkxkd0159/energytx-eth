@@ -60,8 +60,8 @@ ethereum.on('chainChanged', async (chain_id) => {
       })
     window.location.reload();
 });
-ethereum.on('accountsChanged', (accounts) => {
-    Swal.fire({
+ethereum.on('accountsChanged', async (accounts) => {
+    await Swal.fire({
         title: 'Updated!',
         html: `Current account : <b>${accounts[0]}</b>`,
         icon: 'success',

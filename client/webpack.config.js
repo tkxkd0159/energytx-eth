@@ -28,10 +28,18 @@ export default {
           options: {
             presets: ['@babel/preset-env'],
             plugins: ["@babel/plugin-transform-runtime"]
-
           }
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader"
+        ],
+      },
     ]
   },
   devtool: 'source-map',
