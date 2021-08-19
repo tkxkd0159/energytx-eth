@@ -10,12 +10,17 @@ btn.addEventListener('click', async function() {
     let d = document.querySelector('.display-home-value')
     let res = await provider.getBalance(accounts[0]);
     let balance = ethers.utils.formatEther(res)
-    makeDisplayElement(`Your balance is ${balance}`, d)
+    Swal.fire({
+        icon: 'info',
+        title: 'Your Balance',
+        html: `Current account : <b>${accounts[0]}</b>` + `<br><br> <b>${balance}</b> ETH`
+      })
+
 })
 
 const btn2 = document.querySelector('#b_send_t');
 btn2.addEventListener('click', async function() {
-    let to_ = document.querySelector('#to_addr').value;
+    let to_ = document.querySelector('#to_address').value;
     if (to_ === "") {
         Swal.fire({
             icon: 'error',
@@ -53,7 +58,7 @@ btn2.addEventListener('click', async function() {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: `${e.reason}`
+                text: `${e.reason||e.message}`
               })
         }
 

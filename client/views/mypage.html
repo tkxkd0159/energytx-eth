@@ -46,27 +46,51 @@
 
             <div class="b-divider4"></div>
 
-            <div class="container">
-                <div>
-                    <p>
-                        <label for="eth_addr">Address : </label>
-                        <input type="text" id="to_addr" name="eth_addr" />
-                    </p>
-                    <p>
-                        <label for="eth_value">ETH : </label>
-                        <input type="text" id="eth-value" name="eth_value" />
-                    </p>
-                </div>
+<div class="container">
+  <div>
+    <div class="row g-3">
+      <div class="col-12"><button type="button" class="w-100 btn btn-outline-light" onclick="location.href='./1_register.html'"><b>Register your Energy Trading Proposal (ETP) </b></button></div>
+      <div class="col-6">
+        <button type="button" class="w-100 btn btn-outline-light" id="b_get_b" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Get balance of current account"><b>Check your balance</b></button>
+      </div>
+      <div class="col-6">
+        <button type="button" class="w-100 btn btn-outline-light" id="b_get_b3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Get balance of current account"><b>Buy Energy Trading Proposal (ETP) </b></button>
+      </div>
 
-                <div class="b-divider"></div>
+    </div>
 
-                <div>
-                    <button type="button" class="btn btn-outline-light" id="b_get_b" data-bs-toggle="tooltip" data-bs-placement="top" title="Get balance of current account">Get balance</button>
-                    <button type="button" class="btn btn-outline-light" id="b_send_t" data-bs-toggle="tooltip" data-bs-placement="top" title="Send ETH to others">Send</button>
-                </div>
-                <div class="b-divider"></div>
-                <div class="display-home-value"></div>
-            </div>
+  </div>
+  <div class="col-md-7 col-lg-8">
+
+  <div class="display-home-value m-4"></div>
+
+
+  <br><br>
+    <h2 class="mb-3">Send ETH</h2>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="to_address" placeholder="0xCFe590435A372E4eBa869a53B82C8C64352F21FD" value="" required>
+        </div>
+
+       <div class="col-sm-6"></div>
+        <div class="col-sm-4">
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="eth-value" placeholder="123456789" required>
+            <span class="input-group-text">ETH</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+      <button type="button" class="w-25 btn btn-outline-light" id="b_send_t" data-bs-toggle="tooltip" data-bs-placement="top" title="Send ETH to others">Send</button>
+      </form>
+  </div>
+
+</div>
+
     </main>
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
@@ -81,6 +105,7 @@
       </svg>
 
       <script src="../dist/js/basic.bundle.js"></script>
+      <script src="../dist/js/eth.bundle.js"></script>
       <script src="../dist/js/mypage.bundle.js"></script>
     </body>
 </html>

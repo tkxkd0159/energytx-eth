@@ -78,7 +78,7 @@ permission_btn.addEventListener('click', async () => {
     removeElementsBySelector('.display')
     try {
         let permissions = await ethereum.request({ method: "wallet_requestPermissions", params: [{ eth_accounts: {} }] });
-        console.log(permissions[0]["caveats"][1]["value"])
+
         if (permissions.find((p) => p.parentCapability === 'eth_accounts')) {
             let account_ls = permissions[0]["caveats"][1]["value"]
             let res = ""
