@@ -1,8 +1,8 @@
 import path from 'path';
-
 import express from 'express';
 import cors from 'cors';
 
+import {  addFileToIPFS, readFileFromIPFS, Cert, writeCert } from './modules/ipfs'
 import { getBalance } from '../test/ethers'
 
 const app = express();
