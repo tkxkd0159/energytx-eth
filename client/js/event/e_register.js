@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import { ERROR_CHK, ec_with_singer } from "../metamask.js"
+import { ERROR_CHK, ec_with_singer, accounts } from "../metamask.js"
 
 (function () {
     let deploy_url = window.location.href
@@ -25,7 +25,7 @@ btn_reg.addEventListener('click', async ()=>{
     let deploy_url = window.location.href
     let deploy_cursor_decode = deploy_url.indexOf("decode")
     let deploy_decode = deploy_url.slice(deploy_cursor_decode+7)
-    await ec_with_singer.mintBatch("0xCFe590435A372E4eBa869a53B82C8C64352F21FD", [`0x${deploy_decode}`], '0x00')
+    await ec_with_singer.mintBatch(accounts[0], [`0x${deploy_decode}`], '0x00')
 
     Swal.fire({
         position: 'center',

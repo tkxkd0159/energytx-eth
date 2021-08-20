@@ -31,7 +31,6 @@ function loadingBarStart() {
     let main_tag = document.querySelector('main')
     main_tag.appendChild(background);
     main_tag.appendChild(loading_img);
-    console.log(loading_img)
 }
 
 function loadingBarStop() {

@@ -74,19 +74,32 @@ btn1.addEventListener('click', async function() {
 
 })
 
-const btn2 = document.querySelector('#eth_get_test');
+const btn2 = document.querySelector('#etp_get');
 const btn3 = document.querySelector('#eth_post_test');
 
 
 btn2.addEventListener('click', async () => {
-    let addr = await signer.getAddress()
-    console.log(addr)
+    let etps = await ec_with_singer.getMyETP(accounts[0])
+    let display_html = ""
+    etps.forEach((etp)=>{display_html+=(etp+"<br>")})
+    Swal.fire({
+        position: 'center',
+        title: 'My ETP list',
+        icon: 'info',
+        width: 800,
+        html: `<b>${display_html}</b>`,
+        showConfirmButton: true,
+        showClass: {
+            popup: 'animate__animated animate__rotateIn'
+          },
+        hideClass: {
+            popup: 'animate__animated animate__rotateOut'
+          }
+      })
 });
 btn3.addEventListener('click', async () => {
     loadingBarStart()
     let a = new Promise(resolve => {setTimeout(function(){resolve(10)}, 2000)})
     await a
-    let id = await ec_with_singer.getMaxId()
-    let uri = await ec_with_singer.uri(0)
     loadingBarStop()
 });
