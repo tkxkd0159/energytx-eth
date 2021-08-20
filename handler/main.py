@@ -1,12 +1,17 @@
+import rospy
+from sensor_msgs.msg import Imu
+import time
 import logging
 
-test_val = 2
-test_list = [1, 2, 3]
-
 FORMAT = '%(asctime)-15s %(levelname)s: %(message)s'
-logging.basicConfig(format=FORMAT, datefmt='%z %Y-%m-%d %H:%M:%S', filename='ESS.log', filemode='a', level=logging.INFO)
-logging.debug('This message should go to the log file')
-logging.info('So should this')
-logging.warning('And this, too')
-logging.error(f'{test_val}, {test_list}')
-logging.critical('I am critical log')
+
+logging.basicConfig(format=FORMAT, datefmt='%z %y-%m-%d %H:%M:%s', filename='current_date.log', filemode='a', level=logging.DEBUG)
+
+# if not, ros node should be inited
+rospy.init_node('IMUReader', anonymous=True)
+
+def callback(data):
+    logging.info(str((data.angular_velocity.x, data.angular_velocity.y, data.angular_velocity.z)))
+
+# subscriber
+rospy.Subscriber("/mavros/imu/data_raw", Imu, callback)

@@ -3,23 +3,39 @@ import axios from "axios";
 import FormData from "form-data";
 import b58 from "bs58";
 
-interface Cert {
-    name: string;
+interface ETP {
+    producer: string;
     description: string;
+    timestamp: number;
     properties: {
-        start_time: string;
-        end_time: string;
-        power_to_provide: string;
-        price_per_watt: string;
-        signature: string;
+        energy_type: string;
+        location: string;
+        start_time: number;
+        end_time: number;
+        maximum_suppliable: number;
+        price_per_watt: number;
     }
+    signature: string;
 }
 
-// writeCert("test.json", energy_cert)
-async function writeCert(name: string, data: Cert) {
+interface CET {
+    consumer: string;
+    description: string;
+    timestamp: number;
+    properties: {
+        target_etp: string;
+        energy_type: string;
+        start_time: number;
+        end_time: number;
+        amount: number;
+    }
+    signature: string;
+}
+
+// writeETP("test.json", energy_cert)
+async function writeETP(name: string, data: ETP) {
     let d = JSON.stringify(data)
     await writeFile(name, d)
-    console.log("end file")
 }
 
 
@@ -39,7 +55,7 @@ async function addFileToIPFS(file_path: string, file_name?: string) {
         form.append("file", data)
     }
     let res = await ipfs.post('add', form, {headers: {...form.getHeaders()}, params: {"wrap-with-directory": true}})
-    console.log(res.data)
+    return res.data
 
 }
 
@@ -51,14 +67,14 @@ async function readFileFromIPFS(ipfs_path: string) {
 // QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq, cid : base58 encoding : 0x1220 => sha2, 32bytes
 // 0x12207D5A99F603F231D53A4F39D1521F98D2E8BB279CF29BEBFD0687DC98458E7F89
 // Use to store cid in contract as bytes32
-function _cidToHex(cid: string): string {
+function cidToHex(cid: string): string {
     let buf_hex_str = b58.decode(cid)
     let hex_str = buf_hex_str.toString('hex')
     let trunc_hex = hex_str.slice(4)
     return trunc_hex;
 }
 
-function _hexToCid(hex_str: string): string {
+function hexToCid(hex_str: string): string {
     let prefix = "1220"
     let s = prefix + hex_str
     console.log(s)
@@ -70,4 +86,5 @@ function _hexToCid(hex_str: string): string {
 
 
 export { addFileToIPFS, readFileFromIPFS,
-         Cert, writeCert }
+         ETP, writeETP, CET,
+         cidToHex, hexToCid}

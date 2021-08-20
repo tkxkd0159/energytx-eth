@@ -24,8 +24,8 @@ function makeContract(contract_addr: string, abi_path: string): ethers.Contract 
     return c
 }
 
-function makeSigner(pvt_key: string): ethers.Wallet {
-    let s = new ethers.Wallet(pvt_key)
+function makeSigner(mnemonic: string, hd_path: string="m/44'/60'/0'/0/0"): ethers.Wallet {
+    let s = ethers.Wallet.fromMnemonic(mnemonic, hd_path)
     s = s.connect(provider)
     return s
 }
