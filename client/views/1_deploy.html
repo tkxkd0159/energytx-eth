@@ -8,13 +8,13 @@
         <link href="../css/mystyle.css" rel="stylesheet" />
 
 
-        <title>My page • Ethereum-based Energy Trading Platform</title>
+        <title>Deploy • Ethereum-based Energy Trading Platform</title>
     </head>
 
     <body class="text-white">
-    <main>
 
-            <header class="p-3 bg-dark">
+      <main>
+        <header class="p-3 bg-dark">
             <div class="container">
                   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                       <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-info text-decoration-none">
@@ -43,62 +43,22 @@
                 </div>
             </header>
 
+        <div class="container">
+              <div class="py-5 text-center">
+                <img class="d-block badge mx-auto mb-4 bg-success" src="../img/diesel.svg" alt="" width="72" height="57">
+                <h2>Register your ETP</h2>
+                <p class="lead">
+                  Your ETP was added to IPFS. It's time to register your ETP to Ethereum
+                </p>
+                <hr class="my-4">
+                <button class="w-50 btn btn-primary btn-lg m-3" type="button" id="etp-reg-eth">Click to register</button>
+                <button class="w-50 btn btn-success btn-lg m-3" type="button" id="etp-check">Check your ETP status after register</button>
+                <br><br>
+              </div>
 
-            <div class="b-divider4"></div>
+              </div>
 
-<div class="container">
-  <div>
-    <div class="row g-3">
-      <div class="col-12"><button type="button" class="w-100 btn btn-outline-light" onclick="location.href='./1_register.html'"><b>Register your Energy Trading Proposal (ETP) </b></button></div>
-      <div class="col-6">
-        <button type="button" class="w-100 btn btn-outline-light" id="b_get_b" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Get balance of current account"><b>Check your balance</b></button>
-      </div>
-      <div class="col-6">
-        <button type="button" class="w-100 btn btn-outline-light" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Buy Energy Trading Proposal and Get Certification of Energy Transfer"><b>Buy Energy Trading Proposal (ETP) </b></button>
-      </div>
-
-      <div class="col-6">
-        <button type="button" class="w-100 btn btn-outline-light" id="eth_get_test" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Get test"><b>Test 1</b></button>
-      </div>
-      <div class="col-6">
-        <button type="button" class="w-100 btn btn-outline-light" id="eth_post_test" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Post test"><b>Loader Test</b></button>
-      </div>
-
-    </div>
-
-  </div>
-  <div class="col-md-7 col-lg-8">
-
-  <div class="display-home-value m-4"></div>
-
-
-  <br><br>
-    <h2 class="mb-3">Send ETH</h2>
-    <form class="needs-validation" novalidate>
-      <div class="row g-3">
-
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="to_address" placeholder="0xCFe590435A372E4eBa869a53B82C8C64352F21FD" value="" required>
-        </div>
-
-       <div class="col-sm-6"></div>
-        <div class="col-sm-4">
-          <div class="input-group has-validation">
-            <input type="text" class="form-control" id="eth-value" placeholder="123456789" required>
-            <span class="input-group-text">ETH</span>
-          </div>
-        </div>
-
-      </div>
-
-      <hr class="my-4">
-      <button type="button" class="w-25 btn btn-outline-light" id="b_send_t" data-bs-toggle="tooltip" data-bs-placement="top" title="Send ETH to others">Send</button>
-      </form>
-  </div>
-
-</div>
-
-    </main>
+            </main>
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
         <symbol id="speedometer2" viewBox="0 0 16 16">
@@ -113,6 +73,6 @@
 
       <script src="../dist/js/basic.bundle.js"></script>
       <script src="../dist/js/eth.bundle.js"></script>
-      <script src="../dist/js/mypage.bundle.js"></script>
+      <script src="../dist/js/register.bundle.js"></script>
     </body>
 </html>

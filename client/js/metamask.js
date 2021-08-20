@@ -14,7 +14,7 @@ let signer;    // JsonRpcSigner
 let accounts;
 let ec_with_singer;
 const ERROR_CHK = ethers.utils.Logger.errors;
-const energy_contract_address = "0x7709f0faA745d0D37B31996E1E6dbC4Fd3B0EC67";
+const energy_contract_address = "0x7697D74fa230430030E34587c407CD3f9356Ac41";
 
 
 async function checkMetamask() {

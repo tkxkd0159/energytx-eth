@@ -1,4 +1,6 @@
 import * as bootstrap from 'bootstrap'
+import Swal from 'sweetalert2'
+
 
 let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -16,8 +18,10 @@ let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
           event.preventDefault()
           event.stopPropagation()
         }
-
         form.classList.add('was-validated')
       }, false)
     })
+
+
+
 })();
