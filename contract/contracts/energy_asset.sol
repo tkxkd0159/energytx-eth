@@ -54,7 +54,7 @@ contract EnergyAsset is Ownable, ERC1155Burnable {
         return _totalTokenSupply;
     }
 
-    constructor() ERC1155("https://tkxkd0159.github.io/energytx-eth/erc1155meta/token/{id}.json") {
+    constructor() ERC1155("https://ipfs.io/ipfs/{origin_cid}?filename={origin_cid}") {
         _mint(_msgSender(), E_TOKEN, 10000 * 10**18, "");
         _totalTokenSupply += 10**18;
     }

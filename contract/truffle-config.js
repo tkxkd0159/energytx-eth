@@ -42,6 +42,8 @@ module.exports = {
     goerli: {
     provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`),
     network_id: 5,
+    confirmations: 2,
+    timeoutBlocks: 200,
     skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     }
   },
