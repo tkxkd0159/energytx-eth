@@ -1,4 +1,6 @@
 import path from 'path';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import TerserPlugin from 'terser-webpack-plugin';
 const __dirname = path.resolve();
 
 export default {
@@ -42,6 +44,17 @@ export default {
       },
     ]
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: './bundle-report.html',
+      openAnalyzer: false,
+    })
+  ],
   devtool: 'source-map',
   mode: 'development',
 };

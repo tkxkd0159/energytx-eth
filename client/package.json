@@ -20,7 +20,9 @@
     "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.1.4",
     "webpack": "^5.50.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
