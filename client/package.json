@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack -w --config webpack.config.js"
+    "watch": "webpack -w --config webpack.config.js",
+    "start": "http-server -p 5500 -o"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.1.0",
     "ethers": "^5.4.4",
+    "http-server": "^13.0.1",
     "sweetalert2": "^11.1.2"
   },
   "type": "module"
