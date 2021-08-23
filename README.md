@@ -6,9 +6,10 @@
 ![node](https://img.shields.io/badge/Node.js-v14.17.4-orange)
 ![ros](https://img.shields.io/badge/ROS-Noetic-orange)
 
-# Preset
-1. Need to install Metamask and Get ETH from [https://faucet.goerli.mudit.blog/](https://faucet.goerli.mudit.blog/)
-2. Select your network as Goerli testnet on Metamask
+# Preinstall
+1. Need to install Node.js 
+2. Need to install Metamask and Get ETH from [https://faucet.goerli.mudit.blog/](https://faucet.goerli.mudit.blog/)
+3. Select your network as Goerli testnet on Metamask
 
 # Install & Run application
 ```bash
