@@ -10,11 +10,12 @@
 1. Need to install Metamask and Get ETH from [https://faucet.goerli.mudit.blog/](https://faucet.goerli.mudit.blog/)
 2. Select your network as Goerli testnet on Metamask
 
+# Install & Run application
 ```bash
 # Change directory to the root directory of project
 
 # Install program
-./script install.sh
+./script install.sh --ipfs
 # Execute program
 ./script run.sh
 ```
