@@ -6,8 +6,17 @@
 ![node](https://img.shields.io/badge/Node.js-v14.17.4-orange)
 ![ros](https://img.shields.io/badge/ROS-Noetic-orange)
 
-# ERC1155
+# Preinstall
+1. Need to install Node.js 
+2. Need to install Metamask and Get ETH from [https://faucet.goerli.mudit.blog/](https://faucet.goerli.mudit.blog/)
+3. Select your network as Goerli testnet on Metamask
 
-mint되는 각 토큰은 고유하고 수량을 정할 수 있음. 토큰의 정보는 외부 메타데이터를 통해 받아옴.  
-The `uri` can include the string `{id}` which clients must replace with the actual token ID, in lowercase hexadecimal (with no 0x prefix) and leading zero padded to **64 hex** characters.  
-16^64개의 NFT metadata 생성 가능
+# Install & Run application
+```bash
+# Change directory to the root directory of project
+
+# Install program
+./script install.sh --ipfs
+# Execute program
+./script run.sh
+```
