@@ -44,17 +44,6 @@ export default {
       },
     ]
   },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
-  plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      reportFilename: './bundle-report.html',
-      openAnalyzer: false,
-    })
-  ],
-  devtool: 'source-map',
-  mode: 'development',
+
+  mode: 'production',
 };
