@@ -2,7 +2,8 @@ import path from 'path';
 import express from 'express';
 import cors from 'cors';
 
-import {  addFileToIPFS, readFileFromIPFS, ETP, CET, writeETP, cidToHex } from './modules/ipfs'
+import { addFileToIPFS, readFileFromIPFS, ETP, CET, writeETP, cidToHex } from './modules/ipfs'
+import { checkDir } from './modules/utils'
 import { makeSigner } from './modules/ethers';
 
 const app = express();
@@ -14,6 +15,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '..', 'views'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+checkDir('ipfs')
 
 app.get('/', (req, res) => {
     res.render('base')
@@ -60,4 +63,4 @@ app.post('/etp', async (req, res) => {
 
 
 
-app.listen(port, () => console.log(`Listening to ${port}`))
+app.listen(port, () => console.log(` * Listening to ${port}`))

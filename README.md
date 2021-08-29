@@ -10,6 +10,7 @@
 1. Need to install Node.js 
 2. Need to install Metamask and Get ETH from [https://faucet.goerli.mudit.blog/](https://faucet.goerli.mudit.blog/)
 3. Select your network as Goerli testnet on Metamask
+4. Set your infura key & mnemonic (server, contract)
 
 # Install & Run application
 ```bash

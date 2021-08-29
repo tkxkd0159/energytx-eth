@@ -1,4 +1,6 @@
+import { mkdir, readdir } from 'fs';
 import {Request, Response} from 'express';
+
 
 type ExpressIO = (req: Request, res: Response, next: any) => void
 
@@ -12,5 +14,25 @@ const wrapper = (asyncFn: ExpressIO) => {
     };
 };
 
+function checkDir(target_dir: string){
+    let check = false
+    const files = readdir(".", (err, files) =>{
+        if (err) throw err;
+        for (let file of files) {
+            if (target_dir === file) {
+                check = true;
+                console.log("* ipfs folder exist")
+                break;
+            }
+        }
 
-export {wrapper}
+        if (check === false) {
+            mkdir(`./${target_dir}`, {recursive: true}, (err) => {
+                if (err) throw err;
+            })
+        }
+    });
+}
+
+
+export {wrapper, checkDir}
