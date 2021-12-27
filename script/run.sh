@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ipfs daemon &
-cd ./server
+cd ./bg_worker
 npm start &
-cd ../client
+cd ../frontend
 npm start
