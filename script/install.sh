@@ -23,9 +23,9 @@ while true; do
 done
 
 echo " * Start to install background packages "
-cd ./server && npm i
+cd ./bg_worker && npm i
 echo " * Finish installation 1/2 "
 echo " * Start to install frontend packages "
-cd ../client && npm i
+cd ../frontend && npm i
 npm run build
 echo " * Finish installation 2/2 "
